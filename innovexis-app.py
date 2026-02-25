@@ -13,7 +13,7 @@ st.title("🚕 OLA Ride Insights Dashboard")
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("G:\My Drive\Innovexis-Data-Analyst-Task\OLA_Ride-Analysis-Task2\ola_data.csv.csv")
+    df = pd.read_csv("ola_data.csv.csv") 
     if "Date" in df.columns:
         df["Date"] = pd.to_datetime(df["Date"], dayfirst=True)
     return df
@@ -85,5 +85,6 @@ st.dataframe(top_customers)
 st.subheader("Power BI Dashboard")
 
 powerbi_url = "https://app.powerbi.com/view?r=eyJrIjoiOTg2M2MxYTMtYWM4ZC00MDMzLWJiZTgtMzE5MDRlMWJhMTgyIiwidCI6ImJiYzIxNzVlLTUyZDEtNGVkNi1iYzNhLTNhYzQ3OWY1ODM5ZCIsImMiOjEwfQ%3D%3D"
+
 
 components.iframe(powerbi_url, height=650)
